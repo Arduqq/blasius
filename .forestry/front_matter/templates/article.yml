@@ -32,4 +32,4 @@ fields:
       format: markdown
   label: Content
 pages:
-- _posts/test.md
+- _posts/2020-09-20-test.md
