@@ -1,11 +1,4 @@
 ---
 label: 0abfuhr
 hide_body: true
-fields:
-- name: edelmann
-  type: blocks
-  label: EDELMANN
-  template_types: []
-  config:
-    min: 
-    max: 
+fields: []
