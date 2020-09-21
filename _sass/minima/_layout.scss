@@ -6,7 +6,8 @@
   display: block;
   text-align: center;
   border: dashed 45px #b252a1;
-  height: 87vh;
+  height: 70vh;
+  margin: 3vw;
 
   // Positioning context for the mobile navigation icon
   position: relative;
@@ -14,7 +15,7 @@
 
 .site-title {
   @include relative-font-size(10);
-  line-height: $base-line-height * $base-font-size * 20;
+  line-height: $base-line-height * $base-font-size * 15;
   letter-spacing: 2px;
   margin-bottom: 0;
   margin-left: auto;
