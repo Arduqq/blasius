@@ -14,5 +14,21 @@ fields:
 - type: text
   name: categories
   label: categories
+- name: cover
+  type: file
+  config:
+    maxSize: 64
+  label: cover
+  description: Das Deckblatt der Ausgabe
+- name: pages
+  type: number
+  description: Anzahl der Seiten
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+  label: pages
 pages:
 - _posts/2020-10-31-1-invasion.md
