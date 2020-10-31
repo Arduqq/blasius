@@ -1,31 +1,23 @@
 @charset "utf-8";
-
 // Define defaults for each variable.
-
-$base-font-family: 'VT323', monospace;
-$base-font-size:   1.5vw !default;
+$base-font-family: 'VT323',
+monospace;
+$base-font-size: 1.5vw !default;
 $base-font-weight: 300 !default;
-$small-font-size:  $base-font-size * 0.875 !default;
+$small-font-size: $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
-
-$spacing-unit:     0px !default;
-
-$text-color:       rgb(0, 0, 0) !default;
-$background-color: #ffffff !default;
-$brand-color:      #7c754c !default;
-
-$grey-color:       #828282 !default;
+$spacing-unit: 0px !default;
+$text-color: rgb(255, 255, 255) !default;
+$background-color: #163 !default;
+$brand-color: rgb(213, 245, 255) !default;
+$grey-color: #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark:  darken($grey-color, 25%) !default;
-
+$grey-color-dark: darken($grey-color, 25%) !default;
 $table-text-align: left !default;
-
 // Width of the content area
-$content-width:    800px !default;
-
-$on-palm:          600px !default;
-$on-laptop:        800px !default;
-
+$content-width: 800px !default;
+$on-palm: 600px !default;
+$on-laptop: 800px !default;
 // Use media queries like this:
 // @include media-query($on-palm) {
 //   .wrapper {
@@ -34,18 +26,16 @@ $on-laptop:        800px !default;
 //   }
 // }
 @mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
-  }
+    @media screen and (max-width: $device) {
+        @content;
+    }
 }
 
 @mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
+    font-size: $base-font-size * $ratio;
 }
 
 // Import partials.
-@import
-  "minima/base",
-  "minima/layout",
-  "minima/syntax-highlighting"
-;
+@import "minima/base",
+"minima/layout",
+"minima/syntax-highlighting";
