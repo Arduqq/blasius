@@ -4,12 +4,11 @@
 
 .site-header {
     min-height: $spacing-unit * 1.865;
+    max-height: 70vh;
     display: block;
     text-align: center;
-    height: 100vh;
+    color: rgb(220, 217, 255);
     width: 100%;
-    // Positioning context for the mobile navigation icon
-    position: relative;
 }
 
 .site-title {
@@ -23,80 +22,17 @@
 }
 
 .site-nav {
-    @include relative-font-size(4);
+    @include relative-font-size(3);
     background-color: black;
     display: block;
-    width: 100%;
-    line-height: $base-line-height * $base-font-size * 2.25;
+    padding: 3vw;
+    line-height: $base-line-height * $base-font-size * 1;
 }
 
-
-/**
- * Site footer
- */
-
-.site-footer {
-    border-top: 1px solid $grey-color-light;
-    padding: $spacing-unit 0;
-}
-
-.footer-heading {
-    @include relative-font-size(1.125);
-    margin-bottom: $spacing-unit / 2;
-}
-
-.contact-list,
-.social-media-list {
-    list-style: none;
-    margin-left: 0;
-}
-
-.footer-col-wrapper {
-    @include relative-font-size(0.9375);
-    color: $grey-color;
-    margin-left: -$spacing-unit / 2;
-    @extend %clearfix;
-}
-
-.footer-col {
+.site-nav a {
+    display: block;
     float: left;
-    margin-bottom: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-}
-
-.footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width: calc(35% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width: calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width: calc(45% - (#{$spacing-unit} / 2));
-}
-
-@include media-query($on-laptop) {
-    .footer-col-1,
-    .footer-col-2 {
-        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-        width: calc(50% - (#{$spacing-unit} / 2));
-    }
-    .footer-col-3 {
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width: calc(100% - (#{$spacing-unit} / 2));
-    }
-}
-
-@include media-query($on-palm) {
-    .footer-col {
-        float: none;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width: calc(100% - (#{$spacing-unit} / 2));
-    }
+    margin-right: 5vw;
 }
 
 
@@ -128,11 +64,12 @@
 .post-meta {
     font-size: $small-font-size;
     color: $grey-color;
+    line-height: 1;
 }
 
 .post-link {
     display: block;
-    @include relative-font-size(1.5);
+    @include relative-font-size(4);
 }
 
 
@@ -140,8 +77,16 @@
  * Posts
  */
 
+.post-cover {
+    max-width: 50%;
+    width: 50vw;
+    float: left;
+    margin: $spacing-unit;
+    object-fit: contain;
+}
+
 .post-header {
-    margin-bottom: $spacing-unit;
+    margin-top: $spacing-unit;
 }
 
 .post-title {
@@ -173,4 +118,48 @@
             @include relative-font-size(1.125);
         }
     }
+}
+
+.contact-form form {
+    @include relative-font-size(1);
+    text-align: justify;
+    text-justify: auto;
+}
+
+.contact-form input,
+select,
+textarea {
+    @include relative-font-size(2);
+    padding: $spacing-unit;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+    color: white;
+}
+
+.contact-form input[type="number"] {
+    width: 5vw;
+}
+
+.contact-form textarea {
+    @include relative-font-size(1);
+    width: 100%;
+    resize: none;
+}
+
+.contact-form button {
+    @include relative-font-size(3);
+    padding: $spacing-unit;
+    background: transparent;
+    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+    color: white;
+    text-shadow: 0px 0px 20px rgb(185, 255, 206);
+}
+
+.alert {
+    background: black;
+    box-shadow: 1px 1px 1px 1px #523d66;
 }
