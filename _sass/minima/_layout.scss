@@ -19,20 +19,26 @@
     margin-bottom: 0;
     margin-left: auto;
     margin-right: auto;
+    @include media-query($on-laptop) {
+        @include relative-font-size(15);
+    }
 }
 
 .site-nav {
-    @include relative-font-size(3);
+    @include relative-font-size(2);
     background-color: black;
     display: block;
     padding: 3vw;
     line-height: $base-line-height * $base-font-size * 1;
+    @include media-query($on-laptop) {
+        @include relative-font-size(2.5);
+    }
 }
 
 .site-nav a {
     display: block;
     float: left;
-    margin-right: 5vw;
+    padding: 0 2vw;
 }
 
 
@@ -46,11 +52,11 @@
 }
 
 .page-heading {
-    @include relative-font-size(2);
+    @include relative-font-size(5);
 }
 
 .post-list-heading {
-    @include relative-font-size(1.75);
+    @include relative-font-size(5);
 }
 
 .post-list {
@@ -65,11 +71,14 @@
     font-size: $small-font-size;
     color: $grey-color;
     line-height: 1;
+    @include media-query($on-laptop) {
+        @include relative-font-size(2);
+    }
 }
 
 .post-link {
     display: block;
-    @include relative-font-size(4);
+    @include relative-font-size(6);
 }
 
 
@@ -83,6 +92,11 @@
     float: left;
     margin: $spacing-unit;
     object-fit: contain;
+    @include media-query($on-laptop) {
+        visibility: hidden;
+        width: 0px;
+        transition: .3s;
+    }
 }
 
 .post-header {
@@ -94,7 +108,7 @@
     letter-spacing: -1px;
     line-height: 1;
     @include media-query($on-laptop) {
-        @include relative-font-size(2.25);
+        @include relative-font-size(7);
     }
 }
 
@@ -118,36 +132,54 @@
             @include relative-font-size(1.125);
         }
     }
+    @include media-query($on-laptop) {
+        @include relative-font-size(4);
+    }
 }
 
 .contact-form form {
-    @include relative-font-size(1);
-    text-align: justify;
-    text-justify: auto;
+    @include relative-font-size(3);
+    @include media-query($on-laptop) {
+        @include relative-font-size(4);
+    }
 }
 
 .contact-form input,
 select,
 textarea {
-    @include relative-font-size(2);
+    @include relative-font-size(3);
     padding: $spacing-unit;
     background: transparent;
     border-top: none;
     border-left: none;
     border-right: none;
     outline: none;
-    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+    font-family: $base-font-family;
     color: white;
+    color: rgb(255, 185, 255);
+    @include media-query($on-laptop) {
+        @include relative-font-size(4);
+    }
 }
 
 .contact-form input[type="number"] {
-    width: 5vw;
+    @include relative-font-size(3);
+    width: 10vw;
+    @include media-query($on-laptop) {
+        @include relative-font-size(4);
+    }
 }
 
 .contact-form textarea {
-    @include relative-font-size(1);
-    width: 100%;
+    @include relative-font-size(3);
+    width: 97%;
+    height: 50vh;
+    margin-top: $spacing-unit;
     resize: none;
+    border: dotted 2px white;
+    @include media-query($on-laptop) {
+        @include relative-font-size(4);
+    }
 }
 
 .contact-form button {
@@ -157,9 +189,40 @@ textarea {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: white;
     text-shadow: 0px 0px 20px rgb(185, 255, 206);
+    @include media-query($on-laptop) {
+        @include relative-font-size(4);
+    }
 }
 
 .alert {
     background: black;
     box-shadow: 1px 1px 1px 1px #523d66;
+    @include media-query($on-laptop) {
+        @include relative-font-size(4);
+    }
+}
+
+footer {
+    @include relative-font-size(1);
+    color: white;
+    margin-top: $spacing-unit * 4;
+    background-color: black;
+    padding: $spacing-unit *4;
+    @include media-query($on-laptop) {
+        @include relative-font-size(2);
+    }
+}
+
+.about {
+    padding: $spacing-unit;
+    margin-top: $spacing-unit;
+    @include relative-font-size(1.5);
+    background: black;
+    @include media-query($on-laptop) {
+        @include relative-font-size(3);
+    }
+}
+
+.about p {
+    margin-bottom: $spacing-unit
 }
