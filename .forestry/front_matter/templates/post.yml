@@ -30,5 +30,15 @@ fields:
     max: 
     step: 
   label: pages
+- name: price
+  type: number
+  label: price
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+  description: Preis pro Ausgabe
 pages:
 - _posts/2020-10-31-1-invasion.md
