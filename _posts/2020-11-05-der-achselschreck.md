@@ -16,7 +16,7 @@ Bis endlich um des Wohlseins Zweck,
 
 Der Achselschreck, die Achseln leckt.
 
-\#
+\###
 
 Er hechtet, springt zum Kind geschwind,
 
@@ -38,7 +38,7 @@ Gen Boden fällt – der Schlummer tief.
 
 Der Achselschreck, von dannen lief.
 
-\#
+\###
 
 „So wach es auf!“ ruft’s durch die Straße,
 
@@ -48,7 +48,7 @@ Ganz stumm erblickt das Kind die Klänge,
 
 Und schleckt sich durch die Menschenmenge.
 
-\#
+\###
 
 Doch sei es nur ein Hirngespinst,
 
