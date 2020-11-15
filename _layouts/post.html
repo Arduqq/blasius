@@ -1,7 +1,7 @@
 --- 
 layout: default 
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post h-entry" itemscope itemtype="https://schema.org/BlogPosting">
 
     <div class="post-cover">
         {%- if page.cover -%} <img src="{{ page.cover }}"> {%- endif -%}
@@ -14,7 +14,7 @@ layout: default
         {{ page.date | date: date_format }} <br>
         {%- if page.pages -%}seiten: {{ page.pages }} <br>{%- endif -%}
         {%- if page.price -%}preis: {{ page.price }} intergalaktische euronen{%- endif -%}
-      </time> {%- if page.author -%} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      </time> {%- if page.author -%} • <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
             {%- endif -%}</p>
     </header>
 
