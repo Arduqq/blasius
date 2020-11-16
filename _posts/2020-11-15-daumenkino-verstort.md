@@ -1,6 +1,6 @@
 ---
 layout: post
-title: daumenkino- verstört
+title: 'daumenkino: verstört'
 date: 2020-11-15 23:00:00 +0000
 
 ---
