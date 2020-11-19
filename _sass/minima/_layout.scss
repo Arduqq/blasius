@@ -7,13 +7,12 @@
     max-height: 70vh;
     display: block;
     text-align: center;
-    color: rgb(220, 217, 255);
     width: 100%;
 }
 
 .site-title {
-    @include relative-font-size(10);
-    text-shadow: 0px 0px 20px rgb(185, 255, 206);
+    @include relative-font-size(18);
+    text-shadow: 0px 0px 20px rgb(22, 227, 242);
     line-height: $base-line-height * $base-font-size * 12;
     letter-spacing: 2px;
     margin-bottom: 0;
@@ -22,6 +21,17 @@
     @include media-query($on-laptop) {
         @include relative-font-size(15);
     }
+    color: rgba(217, 255, 233, 0.842);
+    animation: flicker 5s linear infinite;
+    @include media-query($on-laptop) {
+        @include relative-font-size(16);
+    }
+}
+
+.site-title:hover {
+    color: rgba(255, 134, 205, 0.842);
+    @include relative-font-size(19);
+    animation: flicker 2s linear infinite;
 }
 
 .site-nav {
@@ -77,8 +87,18 @@
 }
 
 .post-link {
+    transition: .1s;
     display: block;
+    border-left: 20px solid rgba(176, 134, 255, 0.842);
+    padding: $spacing-unit;
+    background-color: rgba(99, 25, 99, 0.329);
     @include relative-font-size(6);
+}
+
+.post-link:hover {
+    background-color: rgba(176, 134, 255, 0.842);
+    border: none;
+    text-shadow: 10px 0px royalblue;
 }
 
 
@@ -195,11 +215,22 @@ textarea {
 }
 
 .alert {
+    transition: .1s;
+    padding: 2px;
+    text-align: center;
     background: black;
+    color: $brand-color;
     box-shadow: 1px 1px 1px 1px #523d66;
     @include media-query($on-laptop) {
         @include relative-font-size(4);
     }
+}
+
+.alert:hover {
+    color: rgb(249, 77, 255);
+    letter-spacing: 2px;
+    padding: 5px;
+    cursor: pointer;
 }
 
 footer {
@@ -225,4 +256,140 @@ footer {
 
 .about p {
     margin-bottom: $spacing-unit
+}
+
+.scribbles {
+    display: block;
+    z-index: -10;
+    position: absolute;
+    height: 60vh;
+    width: 100%;
+    opacity: .8;
+    @include media-query($on-laptop) {
+        height: 100%;
+    }
+}
+
+#home-alarm {
+    z-index: 10000;
+    transition: .3s;
+    display: block;
+    background: url(blasius_alarm.gif) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-size: 90vw 90vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#home-alarm p {
+    padding: $spacing-unit*15;
+    margin-top: $spacing-unit;
+    @include relative-font-size(1.5);
+    @include media-query($on-laptop) {
+        padding-top: 40%;
+        @include relative-font-size(3);
+    }
+}
+
+#home-alarm button {
+    @include relative-font-size(5);
+    font-family: $base-font-family;
+    border: solid 10px rgb(22, 227, 242);
+    border-radius: 25px;
+    background: black;
+    color: yellow;
+    position: fixed;
+    left: 42vw;
+    bottom: 10vh;
+}
+
+.hidden {
+    transform: translate(0, -200vh);
+    opacity: 0;
+}
+
+.reopened {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+        text-shadow: 0px 0px 20px rgb(22, 227, 242);
+    }
+    2% {
+        opacity: 0.4;
+        text-shadow: 0px 0px 20px rgb(22, 227, 242);
+    }
+    4% {
+        opacity: 1;
+        text-shadow: 0px 0px 29px rgb(22, 227, 242);
+    }
+    19% {
+        opacity: 1;
+        text-shadow: 0px 0px 20px rgb(22, 227, 242);
+    }
+    21% {
+        opacity: 0.4;
+        text-shadow: 0px 0px 21px rgb(22, 227, 242);
+    }
+    23% {
+        opacity: 1;
+        text-shadow: 0px 0px 20px rgb(22, 227, 242);
+    }
+    80% {
+        opacity: 1;
+        text-shadow: 0px 0px 20px rgb(22, 227, 242);
+    }
+    83% {
+        opacity: 0.4;
+        text-shadow: 0px 0px 20px rgb(22, 227, 242);
+    }
+    87% {
+        opacity: 1;
+        text-shadow: 0px 0px 29px rgb(22, 227, 242);
+    }
+}
+
+@keyframes flicker-alt {
+    0% {
+        opacity: 1;
+        text-shadow: 0px 0px 20px rgba(255, 134, 205, 0.842);
+    }
+    2% {
+        opacity: 0.4;
+        text-shadow: 0px 0px 20px rgba(255, 134, 205, 0.842);
+    }
+    4% {
+        opacity: 1;
+        text-shadow: 0px 0px 29px rgba(255, 134, 205, 0.842);
+    }
+    19% {
+        opacity: 1;
+        text-shadow: 0px 0px 20px rgba(255, 134, 205, 0.842);
+    }
+    21% {
+        opacity: 0.4;
+        text-shadow: 0px 0px 21px rgba(255, 134, 205, 0.842);
+    }
+    23% {
+        opacity: 1;
+        text-shadow: 0px 0px 20px rgba(255, 134, 205, 0.842);
+    }
+    80% {
+        opacity: 1;
+        text-shadow: 0px 0px 20px rgba(255, 134, 205, 0.842);
+    }
+    83% {
+        opacity: 0.4;
+        text-shadow: 0px 0px 20px rgba(255, 134, 205, 0.842);
+    }
+    87% {
+        opacity: 1;
+        text-shadow: 0px 0px 29px rgba(255, 134, 205, 0.842);
+    }
 }
