@@ -459,41 +459,81 @@ textarea {
 }
 
 #kapblasius {
-    position: absolute;
-    width: 100vw;
+    width: 100%;
     height: 120vh;
-    background:rgb(2, 0, 2);
+    background:rgb(12, 0, 2);
 }
 
 #kapblasius h1 {
     @include relative-font-size(7);
     text-align: center;
     @include media-query($on-laptop) {
-        width: 80vw;
         @include relative-font-size(10);
     }
 }
 
-#kapblasius .wait-banner {
+
+.banner-slider {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;  
+    display: flex;
+    overflow-y: scroll;
+    padding-left: 20vw;
+    padding-right: 20vw;
     animation: floating-still 5s ease-in-out infinite;
-    border-top: 10px solid white;
+
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+}
+
+.banner-slider .banner {
+    display: inline-block;
+    scroll-behavior: smooth;
+    flex-shrink: 0;
+    background:rgb(0,0,0);
     width: 40vw;
     padding: 5vw;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    scroll-margin-left: 10vw;
+    scroll-margin-right: 10vw;
+    scroll-snap-align: center;
     @include media-query($on-laptop) {
         width: 70vw;
+        border-top: 5px solid white;
         @include relative-font-size(3);
     }
 }
 
-#kapblasius #left-eye {
+.banner-slider:after {
+    content: '';
+    padding-right: 10vw;
+}
+#treehouse-banner #left-eye {
+    padding-top: $spacing-unit;
     width: 15%;
     animation: floating 10s ease-in-out infinite;
 }
 
-.wait-banner #right-eye {
+#treehouse-banner #right-eye {
+    padding-top: $spacing-unit;
     float: inline-end;
     width: 15%;
     animation: floating 12s ease-in-out infinite;
+}
+
+#treehouse-banner {
+    border-top: 10px solid white;
+    border-bottom: 10px dashed white;
+}
+
+#dove-banner {
+    background: rgb(22, 227, 242);
+    color:rgb(12, 0, 2);
+    border: 10px solid rgb(50,0,50);
+}
+
+#star-banner {
+    border: 10px solid rgb(243, 255, 189);
+    background:midnightblue;
 }
