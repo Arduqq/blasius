@@ -41,14 +41,14 @@
     padding: 3vw;
     line-height: $base-line-height * $base-font-size * 1;
     @include media-query($on-laptop) {
-        @include relative-font-size(2.5);
+        @include relative-font-size(4);
     }
 }
 
 .site-nav a {
     display: block;
     float: left;
-    padding: 0 2vw;
+    padding: 2vh 2vw;
 }
 
 
@@ -270,6 +270,22 @@ textarea {
     }
 }
 
+#warning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    padding-top: 10vh;
+    color: white;
+    z-index: 100000;
+    font-size: $base-font-size*2;
+    text-align: center;
+}
+
 #home-alarm {
     width: 100vw;
     height: 100vh;
@@ -284,12 +300,12 @@ textarea {
     top: 0;
     left: 0;
     right: 0;
-    overflow: scroll;
 }
 
 #home-alarm p {
     padding: $spacing-unit*15;
     margin-top: $spacing-unit;
+    overflow: scroll;
     @include relative-font-size(1.5);
     @include media-query($on-laptop) {
         padding: $spacing-unit*25;
@@ -306,6 +322,21 @@ textarea {
     color: yellow;
     position: fixed;
     left: 42vw;
+    bottom: 10vh;
+    @include media-query($on-laptop) {
+        bottom: 5vh;
+    }
+}
+
+#warning button {
+    @include relative-font-size(5);
+    font-family: $base-font-family;
+    border: solid 10px rgb(22, 227, 242);
+    border-radius: 25px;
+    background: black;
+    color: yellow;
+    position: fixed;
+    left: 20vw;
     bottom: 10vh;
     @include media-query($on-laptop) {
         bottom: 5vh;
@@ -398,4 +429,71 @@ textarea {
         opacity: 1;
         text-shadow: 0px 0px 29px rgba(255, 134, 205, 0.842);
     }
+}
+
+@keyframes floating {
+    0% {
+		transform: translatey(0px);
+    }
+    25% {
+        width: 12%;
+    }
+	50% {
+		transform: translatey(-random(10)+px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@keyframes floating-still {
+    0% {
+		transform: translatey(0px);
+    }
+	50% {
+		transform: translatey(-10+px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+#kapblasius {
+    position: absolute;
+    width: 100vw;
+    height: 120vh;
+    background:rgb(2, 0, 2);
+}
+
+#kapblasius h1 {
+    @include relative-font-size(7);
+    text-align: center;
+    @include media-query($on-laptop) {
+        width: 80vw;
+        @include relative-font-size(10);
+    }
+}
+
+#kapblasius .wait-banner {
+    animation: floating-still 5s ease-in-out infinite;
+    border-top: 10px solid white;
+    width: 40vw;
+    padding: 5vw;
+    margin-left: auto;
+    margin-right: auto;
+    @include media-query($on-laptop) {
+        width: 70vw;
+        @include relative-font-size(3);
+    }
+}
+
+#kapblasius #left-eye {
+    width: 15%;
+    animation: floating 10s ease-in-out infinite;
+}
+
+.wait-banner #right-eye {
+    float: inline-end;
+    width: 15%;
+    animation: floating 12s ease-in-out infinite;
 }
