@@ -1,6 +1,4 @@
-/**
- * Site header
- */
+/* Site Header */
 
 .site-header {
     min-height: $spacing-unit * 1.865;
@@ -51,10 +49,20 @@
     padding: 2vh 2vw;
 }
 
+.scribbles {
+    display: block;
+    z-index: -10;
+    position: absolute;
+    height: 60vh;
+    width: 100%;
+    opacity: .8;
+    @include media-query($on-laptop) {
+        height: 100%;
+    }
+}
 
-/**
- * Page content
- */
+
+/* Page Content */
 
 .page-content {
     padding: $spacing-unit 0;
@@ -102,9 +110,7 @@
 }
 
 
-/**
- * Posts
- */
+/* Posts */
 
 .post-cover {
     max-width: 50%;
@@ -157,62 +163,7 @@
     }
 }
 
-.contact-form form {
-    @include relative-font-size(3);
-    @include media-query($on-laptop) {
-        @include relative-font-size(4);
-    }
-}
-
-.contact-form input,
-select,
-textarea {
-    @include relative-font-size(3);
-    padding: $spacing-unit;
-    background: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-    font-family: $base-font-family;
-    color: white;
-    color: rgb(255, 185, 255);
-    @include media-query($on-laptop) {
-        @include relative-font-size(4);
-    }
-}
-
-.contact-form input[type="number"] {
-    @include relative-font-size(3);
-    width: 10vw;
-    @include media-query($on-laptop) {
-        @include relative-font-size(4);
-    }
-}
-
-.contact-form textarea {
-    @include relative-font-size(3);
-    width: 97%;
-    height: 50vh;
-    margin-top: $spacing-unit;
-    resize: none;
-    border: dotted 2px white;
-    @include media-query($on-laptop) {
-        @include relative-font-size(4);
-    }
-}
-
-.contact-form button {
-    @include relative-font-size(3);
-    padding: $spacing-unit;
-    background: transparent;
-    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-    color: white;
-    text-shadow: 0px 0px 20px rgb(185, 255, 206);
-    @include media-query($on-laptop) {
-        @include relative-font-size(4);
-    }
-}
+/* Event Log */
 
 .alert {
     transition: .1s;
@@ -233,6 +184,8 @@ textarea {
     cursor: pointer;
 }
 
+/* Footer */
+
 .site-footer {
     @include relative-font-size(1);
     color: white;
@@ -243,6 +196,8 @@ textarea {
         @include relative-font-size(.3);
     }
 }
+
+/* About Page */
 
 .about {
     padding: $spacing-unit;
@@ -258,100 +213,90 @@ textarea {
     margin-bottom: $spacing-unit
 }
 
-.scribbles {
-    display: block;
-    z-index: -10;
-    position: absolute;
-    height: 60vh;
+/* Home Page */
+
+#kapblasius {
     width: 100%;
-    opacity: .8;
+    height: 120vh;
+    background:rgb(12, 0, 2);
+}
+
+#kapblasius h1 {
+    @include relative-font-size(7);
+    text-align: center;
     @include media-query($on-laptop) {
-        height: 100%;
+        @include relative-font-size(10);
     }
 }
 
-#warning {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    background: black;
-    padding-top: 10vh;
-    color: white;
-    z-index: 100000;
-    font-size: $base-font-size*2;
-    text-align: center;
+/* Banner Roll */
+
+.banner-slider {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;  
+    display: flex;
+    overflow-y: scroll;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    animation: floating-still 5s ease-in-out infinite;
+
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
 }
 
-#home-alarm {
-    width: 100vw;
-    height: 100vh;
-    z-index: 10000;
-    transition: .3s;
-    display: block;
-    background: url(blasius_alarm.gif) center center no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-size: 90vw 90vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-#home-alarm p {
-    padding: $spacing-unit*15;
-    margin-top: $spacing-unit;
-    overflow: scroll;
-    @include relative-font-size(1.5);
+.banner-slider .banner {
+    display: inline-block;
+    scroll-behavior: smooth;
+    flex-shrink: 0;
+    background:rgb(0,0,0);
+    width: 40vw;
+    padding: 5vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    scroll-margin-left: 10vw;
+    scroll-margin-right: 10vw;
+    scroll-snap-align: center;
     @include media-query($on-laptop) {
-        padding: $spacing-unit*25;
+        width: 70vw;
+        border-top: 5px solid white;
         @include relative-font-size(3);
     }
 }
 
-#home-alarm button {
-    @include relative-font-size(5);
-    font-family: $base-font-family;
-    border: solid 10px rgb(22, 227, 242);
-    border-radius: 25px;
-    background: black;
-    color: yellow;
-    position: fixed;
-    left: 42vw;
-    bottom: 10vh;
-    @include media-query($on-laptop) {
-        bottom: 5vh;
-    }
+.banner-slider:after {
+    content: '';
+    padding-right: 10vw;
+}
+.banner-slider #treehouse-banner #left-eye {
+    padding-top: $spacing-unit;
+    width: 15%;
+    animation: floating 10s ease-in-out infinite;
 }
 
-#warning button {
-    @include relative-font-size(5);
-    font-family: $base-font-family;
-    border: solid 10px rgb(22, 227, 242);
-    border-radius: 25px;
-    background: black;
-    color: yellow;
-    position: fixed;
-    left: 20vw;
-    bottom: 10vh;
-    @include media-query($on-laptop) {
-        bottom: 5vh;
-    }
+.banner-slider #treehouse-banner #right-eye {
+    padding-top: $spacing-unit;
+    float: inline-end;
+    width: 15%;
+    animation: floating 12s ease-in-out infinite;
 }
 
-.hidden {
-    transform: translate(0, -200vh);
-    opacity: 0;
+.banner-slider #treehouse-banner {
+    border-top: 10px solid white;
+    border-bottom: 10px dashed white;
 }
 
-.reopened {
-    transform: translate(0, 0);
-    opacity: 1;
+.banner-slider #dove-banner {
+    background: rgb(22, 227, 242);
+    color:rgb(12, 0, 2);
+    border: 10px solid rgb(50,0,50);
 }
+
+.banner-slider #star-banner {
+    border: 10px solid rgb(243, 255, 189);
+    background:midnightblue;
+}
+
+/* Animation */
 
 @keyframes flicker {
     0% {
@@ -458,82 +403,14 @@ textarea {
 	}
 }
 
-#kapblasius {
-    width: 100%;
-    height: 120vh;
-    background:rgb(12, 0, 2);
+/* Misc. */
+
+.hidden {
+    transform: translate(0, -200vh);
+    opacity: 0;
 }
 
-#kapblasius h1 {
-    @include relative-font-size(7);
-    text-align: center;
-    @include media-query($on-laptop) {
-        @include relative-font-size(10);
-    }
-}
-
-
-.banner-slider {
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;  
-    display: flex;
-    overflow-y: scroll;
-    padding-left: 20vw;
-    padding-right: 20vw;
-    animation: floating-still 5s ease-in-out infinite;
-
-    -ms-overflow-style: none; /* IE 11 */
-    scrollbar-width: none; /* Firefox 64 */
-}
-
-.banner-slider .banner {
-    display: inline-block;
-    scroll-behavior: smooth;
-    flex-shrink: 0;
-    background:rgb(0,0,0);
-    width: 40vw;
-    padding: 5vw;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    scroll-margin-left: 10vw;
-    scroll-margin-right: 10vw;
-    scroll-snap-align: center;
-    @include media-query($on-laptop) {
-        width: 70vw;
-        border-top: 5px solid white;
-        @include relative-font-size(3);
-    }
-}
-
-.banner-slider:after {
-    content: '';
-    padding-right: 10vw;
-}
-#treehouse-banner #left-eye {
-    padding-top: $spacing-unit;
-    width: 15%;
-    animation: floating 10s ease-in-out infinite;
-}
-
-#treehouse-banner #right-eye {
-    padding-top: $spacing-unit;
-    float: inline-end;
-    width: 15%;
-    animation: floating 12s ease-in-out infinite;
-}
-
-#treehouse-banner {
-    border-top: 10px solid white;
-    border-bottom: 10px dashed white;
-}
-
-#dove-banner {
-    background: rgb(22, 227, 242);
-    color:rgb(12, 0, 2);
-    border: 10px solid rgb(50,0,50);
-}
-
-#star-banner {
-    border: 10px solid rgb(243, 255, 189);
-    background:midnightblue;
+.reopened {
+    transform: translate(0, 0);
+    opacity: 1;
 }
