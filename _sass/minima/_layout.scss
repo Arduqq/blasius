@@ -58,6 +58,7 @@
         opacity: .8;
         @include media-query($on-laptop) {
             height: 100%;
+            visibility: hidden;
         }
     }
     /* Page Content */
@@ -145,23 +146,27 @@
         h2 {
             @include relative-font-size(2);
             @include media-query($on-laptop) {
-                @include relative-font-size(1.75);
+                @include relative-font-size(5);
             }
         }
         h3 {
             @include relative-font-size(1.625);
             @include media-query($on-laptop) {
-                @include relative-font-size(1.375);
+                @include relative-font-size(4);
             }
         }
         h4 {
             @include relative-font-size(1.25);
             @include media-query($on-laptop) {
-                @include relative-font-size(1.125);
+                @include relative-font-size(3.5);
             }
         }
         @include media-query($on-laptop) {
-            @include relative-font-size(4);
+            @include relative-font-size(3);
+            mix-blend-mode: normal;
+            filter: invert(0%);
+            background: black;
+            color: white;
         }
     }
     /* Event Log */
