@@ -21,12 +21,12 @@
 title: BLASIUS
 email: artur.solomonik@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Groteske, Unart, Sexualität - Ein Prospekt für hungrige Wahnsinnige, verquere Amateure und lüsternde Fanatiker
+  Groteske, Unart, Sexualität - Ein Prospekt für hungrige Wahnsinnige, verquere Hochstapler:innen und lüsternde Fanatiker:innen
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://www.blasius.club" 
 github_username:  arduqq
-instagram: blasiusmagazine
-alert: "Die Blasius geht in die erste Runde, wir sind hier auch bald fertig just u seeee!!"
+instagram: blasius.magazin
+alert: "CALL FOR SUBMISSIONS: QUEER - Wir suchen nach deinen Inhalten. Zeig der Welt was queeres Leben wirklich ist."
 # Build settings
 theme: minima
 plugins:
