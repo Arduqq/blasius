@@ -1,8 +1,0 @@
-Folge uns für pure Perfektion auf Instagram unter: {%- if site.instagram -%} <a href="https://instagram.com/{{ site.instagram| cgi_escape | escape }}"><span class="username"> @{{ site.instagram| escape }}</span></a>
-{%- endif -%} {%- if site.rss -%}
-    <a href="{{ 'feed.xml' | relative_url }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg> <span>{{ site.rss | escape }}</span></a>{%- endif -%}<br>
-
-{%- if site.github_username -%}
-Webseite mit 💙 gestanzt von <a href="https://github.com/{{ site.github_username| cgi_escape | escape }}"><span class="username">Mir!</span>
-</a>
-{%-endif -%} 
